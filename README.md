@@ -1,2 +1,0 @@
-# mondex-card-backend
-
