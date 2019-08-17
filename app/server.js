@@ -22,7 +22,7 @@ const app = express();
 app.use(
   session({
     store: new SessionFileStore(),
-    secret: 'mondex_cards',
+    secret: 'auto_care',
     resave: false,
     saveUninitialized: true,
     cookie: {
