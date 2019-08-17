@@ -1,0 +1,21 @@
+export const SYSTEM_CONFIG = {
+  WITHDRAW_FEE: 0,
+  SYSTEM_CURRENCY: '',
+  ADMIN_EMAIL: "Administrator<rm7377biz@gmail.com>, Tan Duy<tanduy899@gmail.com>, Sjm<sjm0812@gmail.com>, Sol<sol7898@naver.com>",
+  CALLING_CARD: 4000,
+  PERIOD: 168,
+  ESCROW_PERIOD: 6,
+  LOAN_RATE: 0.03,
+  BONUS_BLOCK_PERCENT: 0.3,
+  BONUS_MATCHING_PERCENT: 0.1,
+  WEB_EXPIRED_PERIOD: 28,
+  NOTIFY_REGISTER_EMAIL: '"Mondex Card Registration" <support@mondexcard.com>',
+  NOTIFY_CHANGE_PASSWORD_EMAIL: '"Mondex Card" <support@mondexcard.com>',
+  NOTIFY_WITHDRAW_EMAIL: 'withdraw@mondextel.com',
+  NOTIFY_ADD_FUND_EMAIL: 'addfund@mondextel.com',
+  NOTIFY_KYC: '"Mondex KYC" <support@mondexcard.com>',
+  NOTIFY_AUTO_REPLY_EMAIL: 'support@mondexcard.com',
+  NOTIFY_NOTICE_EMAIL: '"Mondex Notice" <notice@mondextel.com>',
+  NOTIFY_PURCHASE_EMAIL: '"MondexTel Purchase Request" <purchase@mondextel.com>',
+  DEFAULT_AGENT_ID: 3
+};

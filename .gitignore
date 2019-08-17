@@ -1,0 +1,9 @@
+.env
+node_modules/
+build/
+dist/
+logs/
+.idea/
+sessions/
+uploads/
+test/mocha.env.js
