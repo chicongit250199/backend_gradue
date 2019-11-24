@@ -59,7 +59,7 @@
     "validator": "^11.1.0",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^3.6.0",
-    "yarn": "^1.15.2"
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
