@@ -5,7 +5,7 @@ require('dotenv').config();
 const dbLog = container.get('database');
 
 const pool = {
-  max: 5,
+  max: 10,
   min: 0,
   acquire: 30000,
   idle: 10000
@@ -18,10 +18,10 @@ function dbLogging(str, time) {
 
 module.exports = {
   development: {
-    username: process.env.DB_USERNAME || 'root',
-    password: process.env.DB_PASSWORD || '123456',
-    database: 'auto_care',
-    host: process.env.DB_HOST || '127.0.0.1',
+    username: process.env.dbUse || 'root',
+    password: process.env.password || '123456',
+    database: process.env.dbName || 'auto_care',
+    host: process.env.host || 'localhost',
     dialect: 'mysql',
     operatorsAliases: false,
     pool: pool,
@@ -35,16 +35,16 @@ module.exports = {
     username: 'database_test',
     password: null,
     database: 'database_test',
-    host: '127.0.0.1',
+    host: 'root',
     dialect: 'mssql',
     operatorsAliases: false,
     pool: pool
   },
   production: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOSTNAME,
+    username: process.env.dbUsese,
+    password: process.env.password,
+    database: process.env.dbName,
+    host: process.env.host,
     dialect: 'mysql',
     operatorsAliases: false,
     pool: pool,

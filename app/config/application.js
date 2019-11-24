@@ -10,7 +10,7 @@ module.exports = {
     KEY: 'b70813fd-7f41-4b00-8408-57fa8a388a20'
   },
   logFile: {
-    folder: 'logs/auto-care',
+    folder: '/auto-care',
     filename: 'mlm-%DATE%.log',
     errorFile: 'error-%DATE%.log',
     datePattern: 'YYYY-MM-DD',
