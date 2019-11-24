@@ -33,7 +33,7 @@
     "google-libphonenumber": "^3.2.2",
     "googleapis": "^27.0.0",
     "jsonwebtoken": "^8.5.0",
-    "knex": "^0.19.4",
+    "knex": "^0.19.5",
     "lodash": "^4.17.15",
     "mailgun.js": "^2.0.1",
     "md5": "^2.2.1",
@@ -59,7 +59,7 @@
     "validator": "^11.1.0",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^3.6.0",
-    "yarn": "^1.15.2"
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
