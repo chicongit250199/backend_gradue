@@ -32,9 +32,9 @@ module.exports = function myPassport(passport) {
       if (user && !db.User.comparePassword(password, user.password)) {
         return done(null, false, new FormError(new FieldError('password', FIELD_ERROR.INVALID, 'Wrong username or password')));
       }
-
-      if (!user.email_activated) {
-        return done(null, false, new FormError(new FieldError('email', FIELD_ERROR.EMAIL_NOT_ACTIVATED, 'Account is not activated yet')))      }
+// active email
+      // if (!user.email_activated) {
+      //   return done(null, false, new FormError(new FieldError('email', FIELD_ERROR.EMAIL_NOT_ACTIVATED, 'Account is not activated yet')))      }
 
       return done(null, user);
     })
