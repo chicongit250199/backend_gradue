@@ -86,6 +86,8 @@ app.use('/api/user-file', routers.userFileRouter);
 // For User Administrator
 app.use('/api/user-admin/user', routers.adminUserRouter);
 
+// For car manager
+app.use('/api/car', routers.carRouter);
 
 app.use(logErrors);
 app.use(errorHandler);
