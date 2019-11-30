@@ -4,26 +4,41 @@ import {
   register,
   resendRegister
 } from '../service/auth.service';
+import { login } from '../service/login.service';
 
 const passport = require('passport');
 
 const auth = express.Router();
 
 auth.post('/sign-in', (req, res, next) => {
-  passport.authenticate('login', {}, (err, user, info) => {
-    if (user) {
-      return req.login(user, (_err) => {
-        if (_err) {
-          return next(_err);
-        }
-        return res.status(200)
-          .json(user);
-      });
-    }
-    return next(info);
-  })(req, res, next);
-});
 
+  console.log(req.body)
+
+  if(req.body){
+    res.status(400, {sdfsd : sdfsd})
+    res.send({user_infor:req.body })
+  }
+  // passport.authenticate('login', {}, (err, user, info) => {
+  //   if (user) {
+  //     return req.login(user, (_err) => {
+  //       if (_err) {
+  //         return next(_err);
+  //       }
+  //       return res.status(200)
+  //         .json(user);
+  //     });
+  //   }
+  //   return next(info);
+  // })(req, res, next);
+});
+auth.post('/login',(req, res, next) => {
+  console.log(req.body);
+  const userName = req.body.username;
+  const password = req.body.password;
+  console.log(userName);
+  login(userName, password)
+    .then(t => res.status(200).json(t), next);
+});
 auth.post('/register', (req, res, next) => {
   register(req.body)
     .then(t => res.status(200).json(t), next);

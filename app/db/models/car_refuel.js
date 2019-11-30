@@ -1,11 +1,6 @@
-const Sequelize = require('sequelize');
-// const bcrypt = require('bcrypt');
-
-export default class car_refuel extends Sequelize.Model {
-  static init(sequelize, DataTypes) {
-    return super.init(
-      {
-        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+module.exports = (sequelize, DataTypes) => {
+  const car_refuel = sequelize.define('car_refuel', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
         odo: { type: DataTypes.DOUBLE },
         price: { type: DataTypes.DOUBLE },
         refill: { type: DataTypes.DOUBLE },
@@ -16,10 +11,11 @@ export default class car_refuel extends Sequelize.Model {
       },
       {
         tableName: 'car_refuel',
-        modelName: 'car_refuel',
         timestamps: false,
         sequelize
       }
-    );
-  }
-}
+  );
+  return car_refuel;
+};
+
+

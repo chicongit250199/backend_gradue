@@ -1,6 +1,8 @@
 import * as db from '../db/models';
 import { HttpError, HTTP_ERROR } from '../config/error';
 import log from '../config/winston';
+const bcrypt = require('bcrypt');
+const randomstring = require("randomstring");
 
 const validator = require('validator');
 
@@ -39,6 +41,12 @@ export async function register(formCreate) {
     if (existedEmail) {
       throw new HttpError(HTTP_ERROR.BAD_REQUEST, 'Email is already used!');
     }
+  const bcrypt = require('bcrypt');
+  const saltRounds = 10;
+  function hashPassword(password) {
+    const salt = bcrypt.genSaltSync(saltRounds);
+    return bcrypt.hashSync(password, salt);
+  }
 
     return db.sequelize.transaction()
         .then(async (t) => {
@@ -53,7 +61,8 @@ export async function register(formCreate) {
                     address: formCreate.address,
                     city: formCreate.city,
                     country: formCreate.country,
-                    password: db.User.hashPassword(formCreate.password.trim())
+                    password: hashPassword(formCreate.password.trim()),
+                    token: randomstring.generate(15)
                 }, { transaction: t });
 
                 await t.commit();

@@ -1,9 +1,5 @@
-const Sequelize = require('sequelize');
-
-export default class UserResetPassword extends Sequelize.Model {
-  static init(sequelize, DataTypes) {
-    return super.init(
-      {
+module.exports = (sequelize, DataTypes) => {
+  const user_reset_password = sequelize.define('user_reset_password', {
         email: { type: DataTypes.STRING(255), primaryKey: true },
         token: { type: DataTypes.STRING(255) },
         date_created: { type: DataTypes.DATE },
@@ -11,10 +7,11 @@ export default class UserResetPassword extends Sequelize.Model {
       },
       {
         tableName: 'user_reset_password',
-        modelName: 'user_reset_password',
+        // modelName: 'user_reset_password',
         timestamps: false,
         sequelize
       }
-    );
-  }
-}
+  );
+  return user_reset_password;
+};
+

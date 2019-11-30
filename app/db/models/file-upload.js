@@ -1,18 +1,7 @@
-const Sequelize = require('sequelize');
 
-export const DOCUMENT_TYPE = Object.freeze({
-  ID_CARD: 0,
-  PASSPORT: 1,
-  DRIVING_LICENCE: 2,
-  ADDRESS_CARD: 3,
-  PHOTO: 4
-});
-
-export default class FileUpload extends Sequelize.Model {
-  static init(sequelize, DataTypes) {
-    return super.init(
-      {
-        id: {
+module.exports = (sequelize, DataTypes) => {
+  const file_upload = sequelize.define('file_upload', {
+    id: {
           type: DataTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true
@@ -31,6 +20,7 @@ export default class FileUpload extends Sequelize.Model {
         timestamps: false,
         sequelize
       }
-    );
-  }
-}
+  );
+  return file_upload;
+};
+

@@ -1,9 +1,7 @@
-const Sequelize = require('sequelize');
 
-export default class EmailSend extends Sequelize.Model {
-  static init (sequelize, DataTypes) {
-    return super.init(
-      {
+module.exports = (sequelize, DataTypes) => {
+  const email_send = sequelize.define('email_send', {
+
         id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
         from: { type: DataTypes.STRING(150) },
         to: { type: DataTypes.TEXT },
@@ -18,10 +16,9 @@ export default class EmailSend extends Sequelize.Model {
       },
       {
         tableName: 'email_send',
-        modelName: 'email_send',
         timestamps: false,
         sequelize
       }
-    );
-  }
-}
+  );
+  return email_send;
+};
