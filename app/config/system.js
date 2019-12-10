@@ -10,7 +10,7 @@ export const SYSTEM_CONFIG = {
   BONUS_MATCHING_PERCENT: 0.1,
   WEB_EXPIRED_PERIOD: 28,
   NOTIFY_REGISTER_EMAIL: '"Mondex Card Registration" <carcaresytem@gmail.com>',
-  NOTIFY_CHANGE_PASSWORD_EMAIL: '"Mondex Card" <carcaresytem@gmail.com>',
+  NOTIFY_CHANGE_PASSWORD_EMAIL: '"Car Take Care" <maichicong1999@gmail.com>',
   NOTIFY_WITHDRAW_EMAIL: 'carcaresytem@gmail.com',
   NOTIFY_ADD_FUND_EMAIL: 'carcaresytem@gmail.com',
   NOTIFY_KYC: '"Mondex KYC" <carcaresytem@gmail.com>',
