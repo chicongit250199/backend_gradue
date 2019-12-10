@@ -33,7 +33,7 @@ export async function register(formCreate) {
     const existedUser = await db.User.findOne({ where: { username: formCreate.username.trim() } });
 
     if (existedUser) {
-        throw new HttpError(HTTP_ERROR.BAD_REQUEST, 'Username is already used!');
+       throw new HttpError(HTTP_ERROR.BAD_REQUEST, ' Username is already used!');
     }
 
     const existedEmail = await db.User.findOne({ where: { email: _email } });

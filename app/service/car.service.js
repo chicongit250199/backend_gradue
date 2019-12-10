@@ -10,27 +10,39 @@ const _ = require ('lodash');
 export function viewCar(userId) {
   return db.Car.findAll(
     {
-      where: { userId: userId }
+      attributes: ['id', 'name','registration_no'],
+       where: { userId: userId }
     }).then(car =>{
       const id = _.map(car,'id');
       if (id.length === 0)
       {
      throw new HttpError(HTTP_ERROR.BAD_REQUEST, 'User is not have car!');
       }
-      else return car;
+      else return  car;
     });
 }
 // View car detail
 export function viewDetail(carId) {
-  return db.Car_product.findOne(
+  return db.Car.findOne(
     {
-      // attributes: ['id',],
+      attributes: ['id','name','registration_no','engine_type','odo','car_vin','image_url','income'],
       where: {
-        carId: carId
+        id: carId
       },
-      include: [{
-        model: db.Car_product_detail,
-      }],
+      include: [
+        {
+          model: db.Car_brand, attributes: ['name']
+        },
+        {
+          model: db.Car_model, attributes: ['name']
+        },
+        {
+        model: db.Car_product, attributes: ['type','total_amount']
+      },
+        {
+          model: db.Car_refuel, attributes: ['odo','price','refill']
+        }
+      ],
     })
     .then(detail => {
       if (detail.length === 0) {
@@ -50,8 +62,8 @@ export async function addCar(values) {
           name: values.name,
           registration_no: values.registration_no,
           engine_type: values.engine_type,
-          car_brand_id: values.car_brand_id,
-          car_model_id: values.car_model_id,
+          carBrandId: values.carBrandId,
+          carModelId: values.carModelId,
           odo: values.odo,
           car_vin: values.car_vin,
           image_url: values.image_url,

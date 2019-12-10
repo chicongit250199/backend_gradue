@@ -11,9 +11,9 @@ export async function forgotPassword(email) {
     if (!user) {
         throw new HttpError(HTTP_ERROR.BAD_REQUEST, `Email is not exist!`);
     }
-    if (!user.email_activated) {
-        throw new HttpError(HTTP_ERROR.BAD_REQUEST, `Email is not activated yet!`);
-    }
+    // if (!user.email_activated) {
+    //     throw new HttpError(HTTP_ERROR.BAD_REQUEST, `Email is not activated yet!`);
+    // }
     return db.sequelize.transaction()
         .then(async (transaction) => {
             try {
