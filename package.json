@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "authy": "^1.4.0",
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "bitcoin": "^3.0.1",
     "bitcoin-core": "^2.2.0",
     "body-parser": "^1.18.3",
